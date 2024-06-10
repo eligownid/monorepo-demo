@@ -35,7 +35,10 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/my-express-api-e2e/**/*"]
+      "exclude": [
+        "apps/my-express-api-e2e/**/*",
+        "apps/my-express-api-2-e2e/**/*"
+      ]
     },
     "@nx-dotnet/core"
   ],

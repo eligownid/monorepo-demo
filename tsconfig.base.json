@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ownid/libs/mylib": ["libs/mylib/src/index.ts"]
+      "@ownid/libs/mylib": ["libs/mylib/src/index.ts"],
+      "@ownid/interfaces": ["apps/my-express-api-2/src/interfaces.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]
