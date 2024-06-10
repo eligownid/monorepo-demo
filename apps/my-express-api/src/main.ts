@@ -23,6 +23,8 @@ const a: DeployOptions = {
   head: ""
 }
 
+console.log("test2");
+
 console.log(mylib());
 
 const port = process.env.PORT || 3333;
