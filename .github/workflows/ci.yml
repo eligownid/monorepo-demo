@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - '*'
   pull_request:
 
 permissions:
@@ -18,19 +18,16 @@ jobs:
         with:
           fetch-depth: 0
       
-      
-
-      # Connect your workspace on nx.app and uncomment this to enable task distribution.
-      # The "--stop-agents-after" is optional, but allows idle agents to shut down once the "build" targets have been requested
-      # - run: npx nx-cloud start-ci-run --distribute-on="5 linux-medium-js" --stop-agents-after="build"
-
+      # Set up npm authentication
+      - name: Set up npm authentication
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
       
       # Cache node_modules
       - uses: actions/setup-node@v3
         with:
           node-version: 20
           cache: 'npm'
-       
+
       - run: npm ci
       - uses: nrwl/nx-set-shas@v4
 
